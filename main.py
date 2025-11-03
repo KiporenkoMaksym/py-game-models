@@ -8,7 +8,7 @@ from db.models import Race, Skill, Player, Guild
 
 def main() -> None:
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(base_dir, 'players.json')
+    json_path = os.path.join(base_dir, "players.json")
 
     with open(json_path, "r", encoding="utf-8") as f:
         players_data = json.load(f)
@@ -59,6 +59,7 @@ def main() -> None:
                             defaults={"bonus": skill_bonus}
                         )
                         player.skills.add(skill)
+
 
 if __name__ == "__main__":
     main()
