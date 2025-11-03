@@ -7,10 +7,10 @@ from db.models import Race, Skill, Player, Guild
 
 
 def main() -> None:
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    json_path = os.path.join(base_dir, "players.json")
+    # base_dir = os.path.dirname(os.path.abspath(__file__))
+    # json_path = os.path.join(base_dir, "players.json")
 
-    with open(json_path, "r", encoding="utf-8") as f:
+    with open("players.json", "r") as f:
         players_data = json.load(f)
 
     for player_data in players_data:
