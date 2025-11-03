@@ -1,7 +1,6 @@
 import init_django_orm  # noqa: F401
 
 import json
-import os
 
 from db.models import Race, Skill, Player, Guild
 
@@ -35,7 +34,7 @@ def main() -> None:
             race_desc = race_info.get("description")
             if race_name:
                 race, _ = Race.objects.get_or_create(
-                    name=race_name,
+                    name=["race_name"],
                     defaults={"description": race_desc}
                 )
 
@@ -58,7 +57,6 @@ def main() -> None:
                             name=skill_name,
                             defaults={"bonus": skill_bonus}
                         )
-                        player.skills.add(skill)
 
 
 if __name__ == "__main__":
